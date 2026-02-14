@@ -1,0 +1,56 @@
+﻿commit 191ac8648442e465b541c99ff0e916f2d28076bc
+Author: Hugo Molin <hugo.molin@example.com>
+Date:   Sat Feb 14 02:30:04 2026 +0100
+
+    Fix mobile overflow: prevent 3D sphere from bleeding into pricing section
+
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index cd2d3a4..d2f92f3 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -242,7 +242,7 @@ export default function LandingPage() {
+                 </motion.div>
+ 
+                 <motion.section
+-                    className="h-screen py-20 bg-white"
++                    className="min-h-screen h-auto py-20 bg-white"
+                     initial={{ opacity: 0, y: 40 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.8, ease: "easeOut" }}
+
+commit 96d55876d5628a42572a7d5a5d6d5790e403f12f
+Author: Hugo Molin <hugo.molin@example.com>
+Date:   Sat Feb 14 02:05:20 2026 +0100
+
+    Fix Vercel build: resolve React purity/immutability errors and unescaped entities
+
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 257931f..cd2d3a4 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -1,6 +1,6 @@
+ "use client"
+ 
+-import { useEffect, useRef } from "react"
++import { useEffect } from "react"
+ import { motion, useScroll, useTransform } from "framer-motion"
+ 
+ import { ZoomParallax } from "@/components/ui/zoom-parallax"
+@@ -151,7 +151,7 @@ export default function LandingPage() {
+                                 <motion.img
+                                     initial={{ opacity: 0 }}
+                                     animate={{ opacity: 1 }}
+-                                    transition={{ delay: Math.random() * 0.5, duration: 1 }}
++                                    transition={{ delay: (i % 10) * 0.1, duration: 1 }}
+                                     src={url}
+                                     alt="hero background"
+                                     className="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-500"
+@@ -207,7 +207,7 @@ export default function LandingPage() {
+                             className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between"
+                         >
+                             <p className="text-xl md:text-2xl text-gray-600 max-w-md leading-relaxed">
+-                                We built Picz because we believe your best moments shouldn't be buried in a cloud. They should be seen, felt, and remembered.
++                                We built Picz because we believe your best moments shouldn&apos;t be buried in a cloud. They should be seen, felt, and remembered.
+                             </p>
+                             <div className="flex gap-4">
+                                 <div className="w-12 h-1 bg-black"></div>

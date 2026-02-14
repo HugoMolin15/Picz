@@ -1,6 +1,7 @@
 "use client"
 
 import { Lock } from "lucide-react"
+import { AuroraText } from "@/components/ui/aurora-text"
 
 const BASE_IMAGES = [
     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop",
@@ -33,29 +34,33 @@ export function OrbitGallery3D() {
                 </div>
             </div>
 
-            <div className="relative w-full max-w-6xl mx-auto h-[500px] md:h-[700px] px-4 md:px-0">
-                {/* Image Grid Background */}
-                <div className="grid grid-cols-3 md:grid-cols-4 gap-4 w-full h-full opacity-40">
-                    {BASE_IMAGES.map((img, i) => (
-                        <div key={i} className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                            <img src={img} alt="" className="w-full h-full object-cover grayscale" />
-                        </div>
-                    ))}
-                </div>
+            <div className="relative w-full max-w-6xl mx-auto h-[500px] md:h-[700px] px-6 md:px-0">
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem] md:rounded-[3rem]">
+                    {/* Image Grid Background */}
+                    <div className="grid grid-cols-3 md:grid-cols-4 gap-4 w-full h-full opacity-40">
+                        {BASE_IMAGES.map((img, i) => (
+                            <div key={i} className="relative aspect-square overflow-hidden bg-gray-100">
+                                <img src={img} alt="" className="w-full h-full object-cover grayscale" />
+                            </div>
+                        ))}
+                    </div>
 
-                {/* Secure Overlay */}
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-8">
-                    <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl rounded-3xl" />
+                    {/* Secure Overlay */}
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+                        {/* The actual blur layer - covering everything with a slight overflow to prevent edges from showing */}
+                        <div className="absolute inset-[-2px] bg-white/50 backdrop-blur-3xl" />
 
-                    <div className="relative z-20 flex flex-col items-center gap-6">
-                        <div className="w-24 h-24 md:w-32 md:h-32 bg-black rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-                            <Lock className="w-10 h-10 md:w-14 md:h-14 text-white" />
-                        </div>
-                        <div className="text-center">
-                            <p className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-2">Security Status</p>
-                            <div className="flex items-center gap-2 justify-center">
-                                <div className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
-                                <span className="font-mono text-sm font-bold">AES-256 ACTIVE</span>
+                        <div className="relative z-20 flex flex-col items-center gap-6 px-8 text-center">
+                            <div className="w-24 h-24 md:w-32 md:h-32 bg-black rounded-full flex items-center justify-center shadow-2xl">
+                                <Lock className="w-10 h-10 md:w-14 md:h-14 text-white" />
+                            </div>
+                            <div className="text-center">
+                                <p className="text-sm font-bold tracking-[0.3em] uppercase text-black mb-2">Security Status</p>
+                                <div className="flex items-center gap-2 justify-center">
+                                    <span className="font-mono text-sm font-bold">
+                                        <AuroraText>AES-256 ACTIVE</AuroraText>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
