@@ -48,7 +48,7 @@ function CameraAdjustment() {
             // If width is less than 768px (mobile), move camera back to 65
             // Otherwise keep it at 38
             if (window.innerWidth < 768) {
-                camera.position.setZ(60)
+                camera.position.setZ(50)
             } else {
                 camera.position.setZ(38)
             }
