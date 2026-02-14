@@ -6,11 +6,11 @@ import { Github, Twitter, Linkedin, ArrowRight } from 'lucide-react'
 export function NeoMinimalFooter() {
     return (
         <div
-            className='relative h-[1100px] md:h-[800px]'
+            className='relative h-auto md:h-[800px]'
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-            <div className='relative h-[calc(100vh+1100px)] md:h-[calc(100vh+800px)] -top-[100vh]'>
-                <div className='h-[1100px] md:h-[800px] sticky top-[calc(100vh-1100px)] md:top-[calc(100vh-800px)]'>
+            <div className='relative md:h-[calc(100vh+800px)] md:-top-[100vh]'>
+                <div className='h-auto md:h-[800px] md:sticky md:top-[calc(100vh-800px)]'>
                     <FooterContent />
                 </div>
             </div>

@@ -48,7 +48,7 @@ function CameraAdjustment() {
             // If width is less than 768px (mobile), move camera back to 65
             // Otherwise keep it at 38
             if (window.innerWidth < 768) {
-                camera.position.setZ(45)
+                camera.position.setZ(60)
             } else {
                 camera.position.setZ(38)
             }
@@ -167,7 +167,6 @@ export function OrbitGallery3D() {
                     <Suspense fallback={null}>
                         <OrbitingContent />
                     </Suspense>
-                    <OrbitControls enablePan={false} enableZoom={false} enableRotate={true} autoRotate autoRotateSpeed={0.4} />
                 </Canvas>
             </div>
         </div>
