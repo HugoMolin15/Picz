@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import { ZoomParallax } from "@/components/ui/zoom-parallax"
@@ -151,7 +151,7 @@ export default function LandingPage() {
                                 <motion.img
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{ delay: Math.random() * 0.5, duration: 1 }}
+                                    transition={{ delay: (i % 10) * 0.1, duration: 1 }}
                                     src={url}
                                     alt="hero background"
                                     className="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-500"
@@ -207,7 +207,7 @@ export default function LandingPage() {
                             className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between"
                         >
                             <p className="text-xl md:text-2xl text-gray-600 max-w-md leading-relaxed">
-                                We built Picz because we believe your best moments shouldn't be buried in a cloud. They should be seen, felt, and remembered.
+                                We built Picz because we believe your best moments shouldn&apos;t be buried in a cloud. They should be seen, felt, and remembered.
                             </p>
                             <div className="flex gap-4">
                                 <div className="w-12 h-1 bg-black"></div>

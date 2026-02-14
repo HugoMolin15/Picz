@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useMemo, Suspense, useEffect, useState } from "react"
+import { useRef, useMemo, Suspense, useEffect } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { useTexture, OrbitControls } from "@react-three/drei"
 import * as THREE from "three"
@@ -48,10 +48,11 @@ function CameraAdjustment() {
             // If width is less than 768px (mobile), move camera back to 65
             // Otherwise keep it at 38
             if (window.innerWidth < 768) {
-                camera.position.z = 60
+                camera.position.setZ(60)
             } else {
-                camera.position.z = 38
+                camera.position.setZ(38)
             }
+            camera.updateProjectionMatrix()
         }
 
         // Initial check
@@ -153,7 +154,7 @@ export function OrbitGallery3D() {
                         FOREVER.
                     </h2>
                     <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        Your memories deserve a fortress, not just a folder. We use military-grade encryption and decentralized storage to ensure your life's work remains private, permanent, and exclusively yours.
+                        Your memories deserve a fortress, not just a folder. We use military-grade encryption and decentralized storage to ensure your life&apos;s work remains private, permanent, and exclusively yours.
                     </p>
                 </div>
             </div>

@@ -24,7 +24,7 @@ function Feature() {
                                 Find anything by describing it
                             </h2>
                             <p className="text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
-                                Our semantic search understands meaning, not just keywords. Type "family dinner at the lake" and see your memories come alive in seconds.
+                                Our semantic search understands meaning, not just keywords. Type &quot;family dinner at the lake&quot; and see your memories come alive in seconds.
                             </p>
                         </div>
                     </div>

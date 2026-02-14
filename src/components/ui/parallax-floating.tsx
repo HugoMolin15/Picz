@@ -111,17 +111,23 @@ export const FloatingElement = ({
     depth = 1,
 }: FloatingElementProps) => {
     const elementRef = useRef<HTMLDivElement>(null)
-    const idRef = useRef(Math.random().toString(36).substring(7))
+    const idRef = useRef<string | null>(null)
     const context = useContext(FloatingContext)
 
     useEffect(() => {
+        if (!idRef.current) {
+            idRef.current = Math.random().toString(36).substring(7)
+        }
         if (!elementRef.current || !context) return
 
+        const currentId = idRef.current
         const nonNullDepth = depth ?? 0.01
 
-        context.registerElement(idRef.current, elementRef.current, nonNullDepth)
-        return () => context.unregisterElement(idRef.current)
-    }, [depth])
+        context.registerElement(currentId, elementRef.current, nonNullDepth)
+        return () => {
+            if (context) context.unregisterElement(currentId)
+        }
+    }, [depth, context])
 
     return (
         <div
