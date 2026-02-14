@@ -144,7 +144,7 @@ function OrbitingContent() {
 
 export function OrbitGallery3D() {
     return (
-        <div className="w-full h-full bg-white relative flex flex-col items-center justify-center pt-96 md:pt-72 pb-12">
+        <div className="w-full h-auto bg-white relative flex flex-col items-center justify-center pt-96 md:pt-72 pb-12 overflow-hidden">
 
             <div className="container mx-auto z-10 px-8 mb-12 md:mb-24 flex justify-center">
                 <div className="max-w-4xl w-full text-center">

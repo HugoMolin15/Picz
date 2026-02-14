@@ -242,7 +242,7 @@ export default function LandingPage() {
                 </motion.div>
 
                 <motion.section
-                    className="h-screen py-20 bg-white"
+                    className="min-h-screen h-auto py-20 bg-white"
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
