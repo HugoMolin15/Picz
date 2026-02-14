@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
 
 @theme {
   --font-satoshi: 'Satoshi', sans-serif;
@@ -16,8 +17,6 @@
 }
 
 @layer base {
-  @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
-
   :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0 0 0);
@@ -130,7 +129,9 @@
   to {
     height: 0;
   }
-}@theme inline {
+}
+
+@theme inline {
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
 
   @keyframes aurora {
@@ -138,18 +139,22 @@
       background-position: 0% 50%;
       transform: rotate(-5deg) scale(0.9);
     }
+
     25% {
       background-position: 50% 100%;
       transform: rotate(5deg) scale(1.1);
     }
+
     50% {
       background-position: 100% 50%;
       transform: rotate(-3deg) scale(0.95);
     }
+
     75% {
       background-position: 50% 0%;
       transform: rotate(3deg) scale(1.05);
     }
+
     100% {
       background-position: 0% 50%;
       transform: rotate(-5deg) scale(0.9);
