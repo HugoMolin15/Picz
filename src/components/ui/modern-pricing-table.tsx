@@ -95,7 +95,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ plans }) => {
                         value={isYearly ? "yearly" : "monthly"}
                         onValueChange={(value) => setIsYearly(value === "yearly")}
                     >
-                        <TabsList className="grid grid-cols-2 w-[400px] h-12 cursor-pointer shadow-sm border border-black/10 bg-gray-200 p-1">
+                        <TabsList className="grid grid-cols-2 w-full max-w-[400px] h-12 cursor-pointer shadow-sm border border-black/10 bg-gray-200 p-1">
                             <TabsTrigger value="monthly" className="text-base font-medium cursor-pointer h-full">Monthly</TabsTrigger>
                             <TabsTrigger value="yearly" className="text-base font-medium flex items-center justify-center gap-2 cursor-pointer h-full">
                                 Yearly
